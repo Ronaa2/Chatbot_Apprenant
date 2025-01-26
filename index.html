@@ -69,36 +69,7 @@
     </div>
   </div>
 
-  <script>
-    const chatBox = document.getElementById("chatBox");
-
-    // Afficher un message dans la boîte de chat
-    function appendMessage(sender, message) {
-      const msgDiv = document.createElement("div");
-      msgDiv.className = sender;
-      msgDiv.textContent = message;
-      chatBox.appendChild(msgDiv);
-      chatBox.scrollTop = chatBox.scrollHeight; // Scroller vers le bas
-    }
-
-    // Envoyer le message
-    async function sendMessage() {
-      const input = document.getElementById("userInput");
-      const userMessage = input.value.trim();
-      if (userMessage) {
-        appendMessage("user", userMessage); // Affiche le message utilisateur
-        input.value = ""; // Efface le champ de saisie
-
-        // Envoyer la question au serveur
-        const response = await fetch("/chat", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: userMessage }),
-        });
-        const data = await response.json();
-        appendMessage("bot", data.response); // Affiche la réponse du bot
-      }
-    }
-  </script>
+<script src="script.js"></script> 
+      
 </body>
 </html>
