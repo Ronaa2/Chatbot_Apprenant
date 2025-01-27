@@ -72,3 +72,5 @@ document.getElementById("userMessage").addEventListener("keydown", function (eve
         }
     }
 });
+
+messagesDiv.scrollTop = messagesDiv.scrollHeight;
