@@ -74,3 +74,25 @@ document.getElementById("userMessage").addEventListener("keydown", function (eve
 });
 
 messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+function handleResponse(userMessage) {
+    const message = userMessage.toLowerCase(); // Normaliser le texte
+    let response = "";
+
+    // Mots-clés et réponses associées
+    if (message.includes("bonjour") || message.includes("salut")) {
+        response = "Bonjour ! Comment puis-je vous aider ?";
+    } else if (message.includes("comment ça va")) {
+        response = "Je suis un programme, donc je vais toujours bien ! Et toi ?";
+    } else if (message.includes("ton nom")) {
+        response = "Je suis un chatbot, ravi de te rencontrer ! 😊";
+    } else if (message.includes("aide")) {
+        response = "Je suis là pour répondre à tes questions. Pose-moi une question !";
+    } else {
+        response = "Je ne suis pas sûr de comprendre. Peux-tu reformuler ?";
+    }
+
+    // Afficher la réponse
+    displayMessage("bot", response);
+}
+
