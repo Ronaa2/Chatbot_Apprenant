@@ -6,13 +6,18 @@
     <title>Chatbot avec Firebase</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div id="container">
-        <div id="chatbox">
+<body class="light-mode">
+   
+    <div id="container" class="light-mode">
+        <div id="chatbox" class="light-mode">
             <div id="messages"></div>
             <input type="text" id="userMessage" placeholder="Posez une question...">
         </div>
     </div>
+    
+    <a href="aide.pdf" class="aide" id="helpLink" download>Aide</a>
+    <button id="themeToggle">Passer en mode sombre</button>
+
     <!-- Firebase SDKs -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
